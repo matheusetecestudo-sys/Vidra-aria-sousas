@@ -6,24 +6,13 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "", variant = 'header' }) => {
-    const isFooter = variant === 'footer';
 
-    // Se for o rodapé, usamos a imagem física solicitada
-    if (isFooter) {
-        return (
-            <img
-                src="/images/logo sem fundo.png"
-                alt="JF Glass Vidraçaria"
-                className={`${className} object-contain`}
-            />
-        );
-    }
 
-    // Para o cabeçalho, mantemos a imagem logo.jpg (ou podemos usar o SVG se preferir)
+    // Unified logo for both header and footer
     return (
         <img
-            src="/images/logo.jpg"
-            alt="JF Glass Vidraçaria"
+            src="/images/logovs.png"
+            alt="Vidraçaria Sousas"
             className={`${className} object-contain`}
         />
     );

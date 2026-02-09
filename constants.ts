@@ -1,5 +1,5 @@
 export const CLIENT_CONFIG = {
-  name: "JF Glass Vidraçaria",
+  name: "Vidraçaria Sousas",
   city: "São Paulo e Região",
   neighborhoods: "Atendimento rápido em toda a cidade",
   whatsapp: "5519994566887",
