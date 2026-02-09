@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   return (
     <>
       <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 bg-white shadow-md ${scrolled ? 'py-2' : 'py-4 md:py-6'}`}>
-        <div className="container-precision flex justify-between items-center h-12">
+        <div className="container-precision flex justify-between items-center">
 
           <button
             onClick={() => window.location.href = '/'}
