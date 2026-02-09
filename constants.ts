@@ -1,0 +1,184 @@
+export const CLIENT_CONFIG = {
+  name: "JF Glass Vidraçaria",
+  city: "São Paulo e Região",
+  neighborhoods: "Atendimento rápido em toda a cidade",
+  whatsapp: "5519994566887",
+  phoneDisplay: "+55 19 99456-6887",
+  email: "homeglass.contato@gmail.com",
+  address: "Atendimento em domicílio e Showroom",
+  openingHours: "Segunda a Sábado: 09:00 às 18:00",
+  message: "Olá! Gostaria de pedir um orçamento pelo WhatsApp."
+};
+
+/**
+ * Função Senior de conversão para gerar links de WhatsApp com rastreabilidade de contexto.
+ * @param origin - Onde o clique ocorreu (ex: 'Hero', 'Serviços', 'Footer')
+ * @param detail - Detalhe específico (ex: nome do serviço ou botão)
+ */
+export const getWhatsAppLink = (origin: string, detail: string = "") => {
+  const isGeneric = !detail || /botão|geral|menu|imediato|rápido|especialista/i.test(detail);
+  const serviceText = isGeneric ? "" : ` para *${detail}*`;
+  const message = `Olá! Vim pelo site e gostaria de solicitar um orçamento${serviceText}.`;
+
+  return `https://wa.me/${CLIENT_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+};
+
+export const WHATSAPP_LINK = getWhatsAppLink("Site", "Geral");
+
+export const getServiceWhatsAppLink = (serviceName: string) => {
+  return getWhatsAppLink("Página de Serviços", serviceName);
+};
+
+export const CTA_TEXT = "Peça seu orçamento no WhatsApp";
+
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  tag?: string;
+}
+
+// LISTA COMPLETA DE SERVIÇOS (15 Itens)
+export const ALL_SERVICES: Service[] = [
+  {
+    id: 'box-banheiro',
+    title: "Box de banheiro",
+    description: "Instalação de box em vidro temperado com roldanas de alta performance e vedação garantida.",
+    imageUrl: "/images/box-banheiro.jpg"
+  },
+  {
+    id: 'espelhos-medida',
+    title: "Espelhos sob medida",
+    description: "Espelhos de cristal com acabamento lapidado ou bisotê, ideais para banheiros, salas e closets.",
+    imageUrl: "/images/espelhos.jpg"
+  },
+  {
+    id: 'janelas-vidro',
+    title: "Janelas de vidro",
+    description: "Janelas em vidro temperado ou comum, com sistemas de correr ou basculantes sob medida.",
+    imageUrl: "/images/janelas.jpg"
+  },
+  {
+    id: 'troca-vidro',
+    title: "Troca de vidro quebrado",
+    description: "Substituição rápida e segura de vidros quebrados em janelas, portas e móveis.",
+    imageUrl: "/images/troca-vidro-quebrado.jpg"
+  },
+  {
+    id: 'portas-vidro',
+    title: "Portas de vidro",
+    description: "Portas de abrir ou correr com acabamentos modernos para residências e empresas.",
+    imageUrl: "/images/divisorias.jpg"
+  },
+  {
+    id: 'vidro-temperado',
+    title: "Vidro temperado",
+    description: "Vidros de alta resistência para projetos que exigem máxima segurança e durabilidade.",
+    imageUrl: "/images/vidro-temperado-amostra.png"
+  },
+  {
+    id: 'vidro-comum',
+    title: "Vidro comum",
+    description: "Opções versáteis em diversas espessuras para aplicações variadas em vidraçaria.",
+    imageUrl: "/images/vidro-comum.jpg"
+  },
+  {
+    id: 'manutencao-portas',
+    title: "Manutenção de portas e janelas",
+    description: "Troca de roldanas, guias, batedores e regulagem completa para o funcionamento perfeito.",
+    imageUrl: "/images/manutencao.jpg"
+  },
+  {
+    id: 'fechamento-sacada',
+    title: "Fechamento de sacada / varanda",
+    description: "Envidraçamento de sacadas com sistema retrátil para aproveitar seu ambiente em qualquer clima.",
+    imageUrl: "/images/sacada.jpg"
+  },
+  {
+    id: 'vitrines-comerciais',
+    title: "Vitrines comerciais",
+    description: "Instalação e manutenção de vitrines em vidro para lojas e estabelecimentos comerciais.",
+    imageUrl: "/images/vitrine-comercial.jpg"
+  },
+  {
+    id: 'guarda-corpo',
+    title: "Guarda-corpo de vidro",
+    description: "Segurança e elegância para escadas e sacadas com fixação técnica certificada.",
+    imageUrl: "/images/guarda-corpo.jpg"
+  },
+  {
+    id: 'tampos-mesa',
+    title: "Tampos de mesa de vidro",
+    description: "Vidros sob medida com lapidação de alta precisão para móveis e mesas de jantar.",
+    imageUrl: "/images/tampos-mesa.jpg"
+  },
+  {
+    id: 'prateleiras-vidro',
+    title: "Prateleiras de vidro",
+    description: "Soluções práticas e modernas para organização e exposição de produtos ou objetos.",
+    imageUrl: "/images/prateleiras.jpg"
+  },
+  {
+    id: 'vidros-especiais',
+    title: "Vidros fumê, bronze e refletivo",
+    description: "Vidros decorativos e funcionais que garantem privacidade e controle de luminosidade.",
+    imageUrl: "/images/vidros-bronze.jpg"
+  },
+  {
+    id: 'fachadas-vidro',
+    title: "Fachadas de vidro",
+    description: "Projetos de fachadas em pele de vidro ou vidros temperados para prédios e lojas.",
+    imageUrl: "/images/fachada-principal.jpg"
+  }
+];
+
+// 4 SERVIÇOS EM DESTAQUE ( Homepage - Prioridade Máxima )
+export const FEATURED_SERVICES: Service[] = [
+  { ...ALL_SERVICES[0], tag: "Mais Pedido" },
+  { ...ALL_SERVICES[1], tag: "Acabamento Premium" },
+  { ...ALL_SERVICES[2], tag: "Instalação Rápida" },
+  { ...ALL_SERVICES[3], tag: "Atendimento Urgente" }
+];
+
+export const TESTIMONIALS = [
+  {
+    name: "Marcos R.",
+    text: "Trocaram o vidro da janela no mesmo dia. Atendimento rápido e preço justo.",
+    role: "Troca de Vidro",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop&fm=webp",
+    stars: 5,
+    date: "há 2 dias"
+  },
+  {
+    name: "Clara S.",
+    text: "O box ficou perfeito e a vedação impecável. A equipe foi muito limpa na instalação.",
+    role: "Box de Banheiro",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&h=256&auto=format&fit=crop&fm=webp",
+    stars: 5,
+    date: "há 1 semana"
+  },
+  {
+    name: "Roberto M.",
+    text: "Instalaram os espelhos da academia com um alinhamento nota 10. Recomendo o time técnico.",
+    role: "Espelhos sob medida",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=256&h=256&auto=format&fit=crop&fm=webp",
+    stars: 5,
+    date: "há 2 semanas"
+  }
+];
+
+export const FAQ_ITEMS = [
+  {
+    question: "Como funciona o orçamento?",
+    answer: "Basta clicar no botão de WhatsApp, enviar as medidas aproximadas e fotos do local. Respondemos com o orçamento na hora."
+  },
+  {
+    question: "Qual o prazo médio de instalação?",
+    answer: "Para itens comuns como box e espelhos, o prazo é de 3 a 5 dias úteis."
+  },
+  {
+    question: "Atendem casos urgentes de vidro quebrado?",
+    answer: "Sim! Temos uma equipe dedicada para substituição imediata de vidros que ofereçam risco à segurança."
+  }
+];

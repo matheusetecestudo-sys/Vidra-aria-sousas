@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>JF Glass Vidraçaria | Engenharia em Vidros</title>
+
+    <!-- SEO & Performance -->
+    <meta name="description"
+        content="Especialista em vidros temperados, laminados, espelhos e projetos de engenharia em vidro. Atendimento rápido e acabamento premium.">
+    <link rel="canonical" href="https://centralvidros.com.br" />
+
+    <!-- Preconnect & Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+        media="print" onload="this.media='all'">
+
+    <!-- Speculation Rules (Near-instant navigation) -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["/", "#servicos", "#preparacao", "#contato", "#sobre"]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Main Script Preload -->
+    <link rel="modulepreload" href="/index.tsx">
+
+    <!-- Styles -->
+</head>
+
+<body>
+    <div id="app-loader" aria-hidden="true">
+        <div class="spinner"></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
