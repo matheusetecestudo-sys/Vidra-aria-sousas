@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               onClick={() => onNavigate?.('home')}
               className="group flex flex-col items-center gap-1 focus:outline-none"
             >
-              <Logo className="h-16 md:h-20 w-auto" variant="footer" />
+              <Logo className="h-24 md:h-32 w-auto" variant="footer" />
             </button>
             <p className="text-base leading-relaxed max-w-xs !text-slate-200 mx-auto font-medium">
               Especialistas em engenharia vidreira de alto desempenho. Precisão técnica em box, espelhos e projetos sob medida em {CLIENT_CONFIG.city}.

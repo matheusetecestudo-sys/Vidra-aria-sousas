@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             className="flex items-center gap-3 md:gap-4 group focus:outline-none"
             aria-label="Ir para a página inicial"
           >
-            <Logo className="h-10 md:h-14 w-auto" />
+            <Logo className="h-16 md:h-20 w-auto" />
           </button>
 
           <nav className="hidden md:flex items-center gap-8 lg:gap-12">
